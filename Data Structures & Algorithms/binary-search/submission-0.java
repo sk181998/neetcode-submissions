@@ -1,0 +1,25 @@
+class Solution {
+    public int search(int[] nums, int target) {
+        int low = 0;
+        int high = nums.length - 1 ;
+        int mid = -1;
+        for(int i = 0 ; i < nums.length ; i++)
+        {
+            mid = (low + high)/2;
+            if(target == nums[mid])//4 == 2
+            {
+                return mid;
+            }
+            else if(target > nums[mid])//4 > 2
+            {
+                low = mid + 1;
+            }
+            else//target < nums[mid]
+            {
+                high = mid - 1;
+            }
+        }
+        return -1;
+        
+    }
+}
